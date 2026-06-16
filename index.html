@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  overflow:hidden;
+  font-family:Arial;
+  text-align:center;
+  color:white;
+}
+
+#box{
+  margin-top:180px;
+}
+
+button{
+  padding:12px 25px;
+  font-size:18px;
+  margin:10px;
+  border:none;
+  border-radius:20px;
+}
+
+#yes{
+  background:pink;
+}
+
+#no{
+  position:absolute;
+  background:gray;
+}
+
+.heart{
+  position:absolute;
+  font-size:25px;
+  animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+  from{transform:translateY(-100px);}
+  to{transform:translateY(100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="box">
+<h1>Will You Be My Girlfriend? ❤️</h1>
+
+<button id="yes" onclick="love()">Yes 💖</button>
+<button id="no" onmouseover="run()">No 😅</button>
+</div>
+
+<script>
+for(let i=0;i<40;i++){
+ let h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(Math.random()*3+2)+"s";
+ document.body.appendChild(h);
+}
+
+function run(){
+ let no=document.getElementById("no");
+ no.style.left=Math.random()*80+"vw";
+ no.style.top=Math.random()*80+"vh";
+}
+
+function love(){
+ document.body.innerHTML=
+ "<h1 style='margin-top:250px;color:pink'>I Love You Forever ❤️🌹</h1>";
+}
+</script>
+
+</body>
+</html>
